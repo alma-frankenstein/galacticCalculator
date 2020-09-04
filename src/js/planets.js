@@ -59,8 +59,7 @@ export default class Calulator {
   }
 
   lifeExpec() {
-    let lifeexpec = this.expectancyCalculator(this.planetLifeExpectancy);
-    console.log(lifeexpec);
+    this.expectancyCalculator(this.planetLifeExpectancy);
     return `Your life expectancy on ${this.planet} is ${this.planetLifeExpectancy} years`
   }
 }
