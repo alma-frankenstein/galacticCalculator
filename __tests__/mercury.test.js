@@ -4,7 +4,7 @@ describe('Calculator', () => {
 
   test('should take in an age, divide it by .24, and return as an integer', () => {
     const calc = new Calculator(60, 'Mercury');
-    expect(calc.calcMercuryAge()).toEqual(250);
+    expect(calc.calcMercuryAge(calc.earthAge)).toEqual(250);
   });
 
   // test('should treturn template literal telling the user their age on Mercury', () => {

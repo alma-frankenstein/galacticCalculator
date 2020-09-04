@@ -4,7 +4,12 @@ describe('Calculator', () => {
 
   test('should decrement life expectancy by 5 if the user smokes', () => {
     const calc = new Calculator(60, 'Venus','true', 'true');
-    expect(calc.lifeExpec()).toEqual(75);
+    expect(calc.lifeExpectancy).toEqual(75);
+  });
+
+  test('should show string literal of life expectancy on a given planet', () => {
+    const calc = new Calculator(60, 'Venus','true', 'true');
+    expect(calc.lifeExpec()).toEqual("Your life expectancy on Venus is 121 years");
   });
 
   // test('should treturn template literal telling the user their age on Venus', () => {

@@ -2,11 +2,18 @@ export default class Calulator {
   constructor(earthAge, planet, smoking, toxicWaste) {
     this.earthAge = earthAge;
     this.planet = planet;
-    this.planetAge = 0;
+    this.planetAge = 1;
     this.lifeExpectancy = 90;
     this.smoking = smoking;
     this.toxicWaste = toxicWaste;
+    this.planetLifeExpectancy = 2;
 
+    if (this.smoking === 'true') {
+      this.lifeExpectancy -= 5;
+    }
+    if (this.toxicWaste === 'true') {
+      this.lifeExpectancy -= 10;
+    }
   }
 
   ageCalculator() {
@@ -22,45 +29,42 @@ export default class Calulator {
     return this.planetAge;
   }
 
-  calcMercuryAge() {
-    return Math.round(this.earthAge/.24);
+  expectancyCalculator() {
+    if(this.planet === 'Jupiter') {
+      this.planetLifeExpectancy = this.calcJupiterAge(this.lifeExpectancy);
+    } else if (this.planet === 'Mercury') {
+      this.planetLifeExpectancy = this.calcMercuryAge(this.lifeExpectancy);
+    } else if (this.planet === 'Venus') {
+      this.planetLifeExpectancy = this.calcVenusAge(this.lifeExpectancy);
+    } else if (this.planet === 'Mars') {
+      this.planetLifeExpectancy = this.calcMarsAge(this.lifeExpectancy);
+    }
+    return this.planetLifeExpectancy;
   }
 
-  calcVenusAge() {
-    return Math.round(this.earthAge/.62);
+  calcMercuryAge(age) {
+    return Math.round(age/.24);
   }
 
-  calcMarsAge() {
-    return Math.round(this.earthAge/1.88);
+  calcVenusAge(age) {
+    return Math.round(age/.62);
   }
 
-  calcJupiterAge() {
-    return Math.round(this.earthAge/11.86);
+  calcMarsAge(age) {
+    return Math.round(age/1.88);
+  }
+
+  calcJupiterAge(age) {
+    return Math.round(age/11.86);
   }
 
   lifeExpec() {
-    if (this.smoking === 'true') {
-      this.lifeExpectancy -= 5;
-    }
-    if (this.toxicWaste === 'true') {
-      this.lifeExpectancy -= 10;
-    }
-    return this.lifeExpectancy;
+    console.log()
+    this.expectancyCalculator(this.planetLifeExpectancy);
+    console.log(this.lifeExpectancy);
+    console.log(this.planetLifeExpectancy);
+    return `Your life expectancy on ${this.planet} is ${this.planetLifeExpectancy} years`
   }
-
-  // lifeExpec(smoking, toxicWaste) {
-  //   this.smoking = smoking;
-  //   this.toxicWaste = toxicWaste;
-
-  //   if (this.smoking === 'true') {
-  //     this.lifeExpectancy -= 5;
-  //   }
-  //   if (this.toxicWaste === 'true') {
-  //     this.lifeExpectancy -= 10;
-  //   }
-  //   console.log(this.lifeExpectancy);
-  //   return this.lifeExpectancy;
-  // }
 }
 
 
@@ -82,5 +86,5 @@ export default class Calulator {
 //     } else {
 //       return "isosceles triangle";
 //     }
-//   }    
+//   }
 // }
