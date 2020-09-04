@@ -42,6 +42,8 @@ export default class Calulator {
     if (this.smoking === 'true'){
       this.lifeExpectancy -= 5;
     }
+    console.log(this.lifeExpectancy);
+    return this.lifeExpectancy;
   }
 }
 
