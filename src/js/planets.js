@@ -1,14 +1,21 @@
-// placeholder variable until UI is added
-const userAge = 40;
-
 export default class Calulator {
-  constructor(earthAge) {
+  constructor(earthAge, planet) {
     this.earthAge = earthAge;
+    this.planetAge = 0;
   }
 
-  returnEarthAge() {
-    return `Your age on Earth is ${this.earthAge}`
+  ageCalculator() {
+    if(this.planet === 'Earth') {
+      this.planetAge = this.calcEarthAge(this.earthAge);
+    }
+    return `Your age on ${this.planetAge} is ${this.earthAge}`
   }
+
+  calcEarthAge() {
+    return this.earthAge * 1;
+  }
+
+  // mercuryAge()
 }
 
 

@@ -4,7 +4,7 @@ describe('Calculator', () => {
 
   test('should take in an age and return it unchanged', () => {
 
-    const earthCalc = new Calculator(60);
+    const earthCalc = new Calculator(60, 'Earth');
     expect(earthCalc.earthAge).toEqual(60);
   });
 });
