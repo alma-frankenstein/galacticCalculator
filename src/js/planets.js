@@ -3,6 +3,7 @@ export default class Calulator {
     this.earthAge = earthAge;
     this.planet = planet;
     this.planetAge = 0;
+    this.lifeExpectancy = 90;
   }
 
   ageCalculator() {
@@ -18,10 +19,6 @@ export default class Calulator {
     return `Your age on ${this.planet} is ${this.planetAge}`
   }
 
-  // calcEarthAge() {
-  //   return this.earthAge * 1;
-  // }
-
   calcMercuryAge() {
     return Math.round(this.earthAge/.24);
   }
@@ -36,6 +33,15 @@ export default class Calulator {
 
   calcJupiterAge() {
     return Math.round(this.earthAge/11.86);
+  }
+
+  lifeExpec(smoking, toxicWaste) {
+    this.smoking = smoking;
+    this.toxicWaste = toxicWaste;
+
+    if (this.smoking === 'true'){
+      this.lifeExpectancy -= 5;
+    }
   }
 }
 
