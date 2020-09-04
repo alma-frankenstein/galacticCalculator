@@ -7,12 +7,6 @@ export default class Calulator {
     this.smoking = smoking;
     this.toxicWaste = toxicWaste;
 
-    if (this.smoking === 'true') {
-      this.lifeExpectancy -= 5;
-    }
-    if (this.toxicWaste === 'true') {
-      this.lifeExpectancy -= 10;
-    }
   }
 
   ageCalculator() {
@@ -45,6 +39,12 @@ export default class Calulator {
   }
 
   lifeExpec() {
+    if (this.smoking === 'true') {
+      this.lifeExpectancy -= 5;
+    }
+    if (this.toxicWaste === 'true') {
+      this.lifeExpectancy -= 10;
+    }
     return this.lifeExpectancy;
   }
 
