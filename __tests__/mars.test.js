@@ -7,8 +7,8 @@ describe('Calculator', () => {
     expect(calc.calcMarsAge()).toEqual(32);
   });
 
-  test('should treturn template literal telling the user their age on Mars', () => {
-    const calc = new Calculator(60, 'Mars');
-    expect(calc.ageCalculator()).toEqual("Your age on Mars is 32");
-  });
+  // test('should treturn template literal telling the user their age on Mars', () => {
+  //   const calc = new Calculator(60, 'Mars');
+  //   expect(calc.ageCalculator()).toEqual("Your age on Mars is 32");
+  // });
 });
