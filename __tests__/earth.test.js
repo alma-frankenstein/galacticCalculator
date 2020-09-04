@@ -11,5 +11,4 @@ describe('Calculator', () => {
     const calc = new Calculator(60, 'Earth');
     expect(calc.ageCalculator()).toEqual("Your age on Earth is 60");
   });
-  
 });

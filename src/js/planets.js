@@ -9,7 +9,7 @@ export default class Calulator {
     if(this.planet === 'Earth') {
       this.planetAge = this.calcEarthAge(this.earthAge);
     } else if (this.planet === 'Mercury') {
-      this.planetAge = calcMercuryAge(this.earthAge);
+      this.planetAge = this.calcMercuryAge(this.earthAge);
     }
     return `Your age on ${this.planet} is ${this.planetAge}`
   }
