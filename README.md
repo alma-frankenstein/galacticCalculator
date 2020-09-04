@@ -14,9 +14,8 @@ This app allows users to calculate their relative age, based on the length of ye
 
 * Return their age in Mercury years (as integer)
   * input: 32
-  * output: 142
+  * output: 134
   
-
 * Return their age in Venus years (as integer)
   * input: 32
   * output: 52
