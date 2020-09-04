@@ -61,8 +61,8 @@ This will install the needed dependencies and open the index.html file in a brow
 
 ## Technologies Used
 
-* HTML
-* CSS
+* Eslint
+* Jest
 * JavaScript
 
 ## Contact Details

@@ -12,5 +12,4 @@ describe('Calculator', () => {
     calc.lifeExpec();
     expect(calc.planetLifeExpectancy).toEqual(6);
   })
-
 });

@@ -12,8 +12,4 @@ describe('Calculator', () => {
     calc.lifeExpec();
     expect(calc.planetLifeExpectancy).toEqual(121);
   })
-  // test('should treturn template literal telling the user their age on Venus', () => {
-  //   const calc = new Calculator(60, 'Venus');
-  //   expect(calc.ageCalculator()).toEqual("Your age on Venus is 97");
-  // });
 });
