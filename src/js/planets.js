@@ -2,11 +2,11 @@ export default class Calulator {
   constructor(earthAge, planet, smoking, toxicWaste) {
     this.earthAge = earthAge;
     this.planet = planet;
-    this.planetAge = 1;
+    this.planetAge = this.ageCalculator();
     this.lifeExpectancy = 90;
     this.smoking = smoking;
     this.toxicWaste = toxicWaste;
-    this.planetLifeExpectancy = 2;
+    this.planetLifeExpectancy = this.expectancyCalculator();
 
     if (this.smoking === 'true') {
       this.lifeExpectancy -= 5;
