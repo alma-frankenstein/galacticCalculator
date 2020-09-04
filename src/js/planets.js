@@ -13,9 +13,7 @@ export default class Calulator {
     if (this.toxicWaste === 'true') {
       this.lifeExpectancy -= 10;
     }
-
     this.planetLifeExpectancy = this.ageCalculator(this.lifeExpectancy);
-
   }
 
   ageCalculator(age) {
@@ -31,32 +29,6 @@ export default class Calulator {
     }
     return newAge;
   }
-
-  // ageCalculator() {
-  //   if(this.planet === 'Jupiter') {
-  //     this.planetAge = this.calcJupiterAge(this.earthAge);
-  //   } else if (this.planet === 'Mercury') {
-  //     this.planetAge = this.calcMercuryAge(this.earthAge);
-  //   } else if (this.planet === 'Venus') {
-  //     this.planetAge = this.calcVenusAge(this.earthAge);
-  //   } else if (this.planet === 'Mars') {
-  //     this.planetAge = this.calcMarsAge(this.earthAge);
-  //   }
-  //   return this.planetAge;
-  // }
-
-  // expectancyCalculator() {
-  //   if(this.planet === 'Jupiter') {
-  //     this.planetLifeExpectancy = this.calcJupiterAge(this.lifeExpectancy);
-  //   } else if (this.planet === 'Mercury') {
-  //     this.planetLifeExpectancy = this.calcMercuryAge(this.lifeExpectancy);
-  //   } else if (this.planet === 'Venus') {
-  //     this.planetLifeExpectancy = this.calcVenusAge(this.lifeExpectancy);
-  //   } else if (this.planet === 'Mars') {
-  //     this.planetLifeExpectancy = this.calcMarsAge(this.lifeExpectancy);
-  //   }
-  //   return this.planetLifeExpectancy;
-  // }
 
   calcMercuryAge(age) {
     return Math.round(age/.24);
@@ -75,7 +47,6 @@ export default class Calulator {
   }
 
   lifeExpec() {
-    // this.expectancyCalculator(this.planetLifeExpectancy);
     if (this.planetAge >= this.planetLifeExpectancy) {
       let yearsOver = this.planetAge - this.planetLifeExpectancy;
       return `Your life expectancy on ${this.planet} is ${this.planetLifeExpectancy} ${this.planet} years, and you're already ${this.planetAge} years old. That's ${yearsOver} longer than expected!`;
