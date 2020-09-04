@@ -1,9 +1,18 @@
 export default class Calulator {
-  constructor(earthAge, planet) {
+  constructor(earthAge, planet, smoking, toxicWaste) {
     this.earthAge = earthAge;
     this.planet = planet;
     this.planetAge = 0;
     this.lifeExpectancy = 90;
+    this.smoking = smoking;
+    this.toxicWaste = toxicWaste;
+
+    if (this.smoking === 'true') {
+      this.lifeExpectancy -= 5;
+    }
+    if (this.toxicWaste === 'true') {
+      this.lifeExpectancy -= 10;
+    }
   }
 
   ageCalculator() {
@@ -35,16 +44,23 @@ export default class Calulator {
     return Math.round(this.earthAge/11.86);
   }
 
-  lifeExpec(smoking, toxicWaste) {
-    this.smoking = smoking;
-    this.toxicWaste = toxicWaste;
-
-    if (this.smoking === 'true'){
-      this.lifeExpectancy -= 5;
-    }
-    console.log(this.lifeExpectancy);
+  lifeExpec() {
     return this.lifeExpectancy;
   }
+
+  // lifeExpec(smoking, toxicWaste) {
+  //   this.smoking = smoking;
+  //   this.toxicWaste = toxicWaste;
+
+  //   if (this.smoking === 'true') {
+  //     this.lifeExpectancy -= 5;
+  //   }
+  //   if (this.toxicWaste === 'true') {
+  //     this.lifeExpectancy -= 10;
+  //   }
+  //   console.log(this.lifeExpectancy);
+  //   return this.lifeExpectancy;
+  // }
 }
 
 
