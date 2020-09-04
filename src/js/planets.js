@@ -10,6 +10,8 @@ export default class Calulator {
       this.planetAge = this.calcEarthAge(this.earthAge);
     } else if (this.planet === 'Mercury') {
       this.planetAge = this.calcMercuryAge(this.earthAge);
+    } else if (this.planet === 'Venus') {
+      this.planetAge = this.calcVenusAge(this.earthAge);
     }
     return `Your age on ${this.planet} is ${this.planetAge}`
   }
@@ -20,6 +22,10 @@ export default class Calulator {
 
   calcMercuryAge() {
     return Math.round(this.earthAge/.24);
+  }
+
+  calcVenusAge() {
+    return Math.round(this.earthAge/.62);
   }
 }
 
