@@ -17,7 +17,7 @@
 
 Clone this repo using:
 
-```git clone https://github.com/alma-frankenstein/pizzaParty.git pizzaParty```
+```git clone https://github.com/alma-frankenstein/galacticCalculator```
 
 Open index.html in your browser to view the page
 
