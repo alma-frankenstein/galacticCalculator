@@ -19,15 +19,15 @@ This app allows users to calculate their relative age, based on the length of ye
 
 * Return their age in Venus years (as integer)
   * input: 32
-  * output: 32
+  * output: 52
 
 * Return their age in Mars years (as integer)
   * input: 32
-  * output: 32
+  * output: 17
 
 * Return their age in Jupiter years(as integer)
-  *
-  *
+  * input: 32
+  * output: 3
 
 * Estimate the user's life expectancy based on survey questions. Start with 90, subtract 5 if they smoke, and 10 if they live on a toxic waste dump
   * input: they live on a toxic waste dump, but don't smoke
@@ -73,7 +73,5 @@ For questions or to suggestions, please email A.Q.Frankenstein@gmail.com
 ### License
 
 This software is licensed under the MIT license.
-
-Fonts are licensed under the Apache License, Version 2.0.
 
 Copyright (c) 2020 Alma Frankenstein
