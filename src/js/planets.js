@@ -76,7 +76,13 @@ export default class Calulator {
 
   lifeExpec() {
     // this.expectancyCalculator(this.planetLifeExpectancy);
-    return `Your life expectancy on ${this.planet} is ${this.planetLifeExpectancy} years`
+    if (this.planetAge >= this.planetLifeExpectancy) {
+      let yearsOver = this.planetAge - this.planetLifeExpectancy;
+      return `Your life expectancy on ${this.planet} is ${this.planetLifeExpectancy} ${this.planet} years, and you're already ${this.planetAge} years old. That's ${yearsOver} longer than expected!`;
+    } else {
+      let yearsLeft = this.planetLifeExpectancy - this.planetAge;
+      return `Your life expectancy on ${this.planet} is ${this.planetLifeExpectancy} ${this.planet} years, and you're already ${this.planetAge} years old. That means you could expect ${yearsLeft} more years!`;
+    }
   }
 }
 

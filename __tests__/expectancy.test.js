@@ -9,7 +9,7 @@ describe('Calculator', () => {
 
   test('should show string literal of life expectancy on a given planet', () => {
     const calc = new Calculator(60, 'Venus','true', 'true');
-    expect(calc.lifeExpec()).toEqual("Your life expectancy on Venus is 121 years");
+    expect(calc.lifeExpec()).toEqual("Your life expectancy on Venus is 121 Venus years, and you're already 97 years old. That means you could expect 24 more years!");
   });
 
   // test('should treturn template literal telling the user their age on Venus', () => {
