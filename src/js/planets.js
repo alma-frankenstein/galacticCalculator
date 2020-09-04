@@ -2,11 +2,10 @@ export default class Calulator {
   constructor(earthAge, planet, smoking, toxicWaste) {
     this.earthAge = earthAge;
     this.planet = planet;
-    this.planetAge = this.ageCalculator();
+    this.planetAge = this.ageCalculator(earthAge);
     this.lifeExpectancy = 90;
     this.smoking = smoking;
     this.toxicWaste = toxicWaste;
-    this.planetLifeExpectancy = this.expectancyCalculator();
 
     if (this.smoking === 'true') {
       this.lifeExpectancy -= 5;
@@ -14,33 +13,50 @@ export default class Calulator {
     if (this.toxicWaste === 'true') {
       this.lifeExpectancy -= 10;
     }
+
+    this.planetLifeExpectancy = this.ageCalculator(this.lifeExpectancy);
+
   }
 
-  ageCalculator() {
+  ageCalculator(age) {
+    let newAge;
     if(this.planet === 'Jupiter') {
-      this.planetAge = this.calcJupiterAge(this.earthAge);
+      newAge = this.calcJupiterAge(age);
     } else if (this.planet === 'Mercury') {
-      this.planetAge = this.calcMercuryAge(this.earthAge);
+      newAge = this.calcMercuryAge(age);
     } else if (this.planet === 'Venus') {
-      this.planetAge = this.calcVenusAge(this.earthAge);
+      newAge = this.calcVenusAge(age);
     } else if (this.planet === 'Mars') {
-      this.planetAge = this.calcMarsAge(this.earthAge);
+      newAge = this.calcMarsAge(age);
     }
-    return this.planetAge;
+    return newAge;
   }
 
-  expectancyCalculator() {
-    if(this.planet === 'Jupiter') {
-      this.planetLifeExpectancy = this.calcJupiterAge(this.lifeExpectancy);
-    } else if (this.planet === 'Mercury') {
-      this.planetLifeExpectancy = this.calcMercuryAge(this.lifeExpectancy);
-    } else if (this.planet === 'Venus') {
-      this.planetLifeExpectancy = this.calcVenusAge(this.lifeExpectancy);
-    } else if (this.planet === 'Mars') {
-      this.planetLifeExpectancy = this.calcMarsAge(this.lifeExpectancy);
-    }
-    return this.planetLifeExpectancy;
-  }
+  // ageCalculator() {
+  //   if(this.planet === 'Jupiter') {
+  //     this.planetAge = this.calcJupiterAge(this.earthAge);
+  //   } else if (this.planet === 'Mercury') {
+  //     this.planetAge = this.calcMercuryAge(this.earthAge);
+  //   } else if (this.planet === 'Venus') {
+  //     this.planetAge = this.calcVenusAge(this.earthAge);
+  //   } else if (this.planet === 'Mars') {
+  //     this.planetAge = this.calcMarsAge(this.earthAge);
+  //   }
+  //   return this.planetAge;
+  // }
+
+  // expectancyCalculator() {
+  //   if(this.planet === 'Jupiter') {
+  //     this.planetLifeExpectancy = this.calcJupiterAge(this.lifeExpectancy);
+  //   } else if (this.planet === 'Mercury') {
+  //     this.planetLifeExpectancy = this.calcMercuryAge(this.lifeExpectancy);
+  //   } else if (this.planet === 'Venus') {
+  //     this.planetLifeExpectancy = this.calcVenusAge(this.lifeExpectancy);
+  //   } else if (this.planet === 'Mars') {
+  //     this.planetLifeExpectancy = this.calcMarsAge(this.lifeExpectancy);
+  //   }
+  //   return this.planetLifeExpectancy;
+  // }
 
   calcMercuryAge(age) {
     return Math.round(age/.24);
@@ -59,7 +75,7 @@ export default class Calulator {
   }
 
   lifeExpec() {
-    this.expectancyCalculator(this.planetLifeExpectancy);
+    // this.expectancyCalculator(this.planetLifeExpectancy);
     return `Your life expectancy on ${this.planet} is ${this.planetLifeExpectancy} years`
   }
 }
